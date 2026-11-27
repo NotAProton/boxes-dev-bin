@@ -1,11 +1,11 @@
 # Maintainer: NotAProton <git@notaproton.me>
 
 pkgname=boxes-dev-bin
-pkgver=1.0.1135
+pkgver=1.0.1138
 pkgrel=1
-_debver=1.0.1135-362
-_deb_x86_64='pool/main/b/boxes-dev/boxes-dev_1.0.1135_amd64.deb'
-_deb_aarch64='pool/main/b/boxes-dev/boxes-dev_1.0.1135_arm64.deb'
+_debver=1.0.1138-365
+_deb_x86_64='pool/main/b/boxes-dev/boxes-dev_1.0.1138_amd64.deb'
+_deb_aarch64='pool/main/b/boxes-dev/boxes-dev_1.0.1138_arm64.deb'
 pkgdesc='Cloud dev environments for agentic coding (boxes.dev desktop app)'
 arch=('x86_64' 'aarch64')
 url='https://boxes.dev'
@@ -41,8 +41,8 @@ noextract=(
   "${pkgname}-${pkgver}-${pkgrel}-x86_64.deb"
   "${pkgname}-${pkgver}-${pkgrel}-aarch64.deb"
 )
-sha512sums_x86_64=('46c1b0fca83123cd3d7fb08d6db872b0be27eb46be1180a483175d08cd21723c6d573d9879d54770b196f13d31304a45e692608c35b637b9deb672aa36c8929d')
-sha512sums_aarch64=('8de3d8a30ddeb1ae3976d732f8014ab49105105e2adde9ee5a99b1876201688d625190b70a458f6087cd3dc7200f6c79d315d78e9e6610f3f1c666680188ea58')
+sha512sums_x86_64=('7ffbecb6e031314a7a4f81f4e03555d7bcdbc54efc75f0e9d16c1a646eeae69f7c689d4ef3788e8d920535002c5297673bb9c462976813e06672f92d61c65250')
+sha512sums_aarch64=('1fd3b540d693b51c8a8208040a18e3c0ff56c744f333677ed088509dcb43951a15493dd06f5bb40a6bddd3d72d30ce595c128e257ff496e5a82ec39ff69e3858')
 
 prepare() {
   rm -rf "${srcdir}/deb-extract"
