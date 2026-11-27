@@ -26,8 +26,8 @@ jobs:
       - name: Regenerate .SRCINFO
         if: steps.check.outputs.updated == 'true'
         run: |
-          docker run --rm -v "$PWD:/pkg" -w /pkg archlinux:base-devel \
-            bash -c 'useradd -m builder && su -s /bin/bash builder -c "cd /pkg && makepkg --printsrcinfo"' > .SRCINFO
+          docker run --rm -v "$PWD:/pkg:ro" archlinux:base-devel \
+            bash -c 'useradd -m builder && install -Dm644 -o builder -g builder /pkg/PKGBUILD /home/builder/PKGBUILD && su -s /bin/bash builder -c "cd /home/builder && makepkg --printsrcinfo"' > .SRCINFO
           grep -q "^[[:space:]]*pkgver = ${{ steps.check.outputs.pkgver }}$" .SRCINFO
 
       - name: Commit and push update
